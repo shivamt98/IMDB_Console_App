@@ -1,0 +1,5 @@
+C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Tests\bin\Debug\netcoreapp3.1\IMDBConsoleApp.Tests.deps.json
+C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Tests\bin\Debug\netcoreapp3.1\IMDBConsoleApp.Tests.dll
+C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Tests\obj\Debug\netcoreapp3.1\IMDBConsoleApp.Tests.csprojAssemblyReference.cache
+C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Tests\obj\Debug\netcoreapp3.1\IMDBConsoleApp.Tests.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Tests\obj\Debug\netcoreapp3.1\IMDBConsoleApp.Tests.AssemblyInfo.cs

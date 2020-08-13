@@ -1,0 +1,12 @@
+C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Repository\bin\Debug\netcoreapp3.1\IMDBConsoleApp.Repository.deps.json
+C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Repository\bin\Debug\netcoreapp3.1\IMDBConsoleApp.Repository.dll
+C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Repository\bin\Debug\netcoreapp3.1\IMDBConsoleApp.Repository.pdb
+C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Repository\bin\Debug\netcoreapp3.1\IMDBConsoleApp.Domain.dll
+C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Repository\bin\Debug\netcoreapp3.1\IMDBConsoleApp.Domain.pdb
+C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Repository\obj\Debug\netcoreapp3.1\IMDBConsoleApp.Repository.csprojAssemblyReference.cache
+C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Repository\obj\Debug\netcoreapp3.1\IMDBConsoleApp.Repository.AssemblyInfoInputs.cache
+C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Repository\obj\Debug\netcoreapp3.1\IMDBConsoleApp.Repository.AssemblyInfo.cs
+C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Repository\obj\Debug\netcoreapp3.1\IMDBConsoleApp.Repository.csproj.CoreCompileInputs.cache
+C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Repository\obj\Debug\netcoreapp3.1\IMDBConsoleApp.Repository.csproj.CopyComplete
+C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Repository\obj\Debug\netcoreapp3.1\IMDBConsoleApp.Repository.dll
+C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Repository\obj\Debug\netcoreapp3.1\IMDBConsoleApp.Repository.pdb
