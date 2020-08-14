@@ -15,3 +15,12 @@ Scenario: Add a new movie
 	Then the movie will appear as
 	| Name    | Year of release | Plot     | Actors                    | Producer |
 	| Avenger | 2020 1 1        | Avengers | Iron Man, Captain America | Shield   |
+
+Scenario: Show list of all the movies on console
+	Given I have list of movies 
+	When I will show the list of the movies on the console
+	Then Movies will appear as
+	| Name      | Year of release | Plot      | Actors                    | Producer |
+	| Avenger   | 2020 1 1        | Avengers  | Iron Man, Captain America | Shield   |
+	| Avenger 2 | 2020 1 2        | Avengers2 | Iron Man, Captain America | Shield   |
+

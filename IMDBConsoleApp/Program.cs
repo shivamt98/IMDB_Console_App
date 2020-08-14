@@ -92,8 +92,7 @@ namespace IMDBConsoleApp
                             Name = movieName,
                             YearOfRelease = movieReleaseDate,
                             Plot = moviePlot,
-                            Actors = movieActors,
-                            Producer = string.Join("", movieProducer)
+   
                         };
                         _movieRepository.Add(movie);
                         break;
