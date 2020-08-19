@@ -1,9 +1,9 @@
 C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Domain\bin\Debug\netcoreapp3.1\IMDBConsoleApp.Domain.deps.json
 C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Domain\bin\Debug\netcoreapp3.1\IMDBConsoleApp.Domain.dll
 C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Domain\bin\Debug\netcoreapp3.1\IMDBConsoleApp.Domain.pdb
-C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Domain\obj\Debug\netcoreapp3.1\IMDBConsoleApp.Domain.csprojAssemblyReference.cache
 C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Domain\obj\Debug\netcoreapp3.1\IMDBConsoleApp.Domain.AssemblyInfoInputs.cache
 C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Domain\obj\Debug\netcoreapp3.1\IMDBConsoleApp.Domain.AssemblyInfo.cs
 C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Domain\obj\Debug\netcoreapp3.1\IMDBConsoleApp.Domain.csproj.CoreCompileInputs.cache
 C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Domain\obj\Debug\netcoreapp3.1\IMDBConsoleApp.Domain.dll
 C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Domain\obj\Debug\netcoreapp3.1\IMDBConsoleApp.Domain.pdb
+C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Domain\obj\Debug\netcoreapp3.1\IMDBConsoleApp.Domain.csprojAssemblyReference.cache
