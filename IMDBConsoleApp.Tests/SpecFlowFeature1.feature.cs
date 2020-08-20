@@ -118,10 +118,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("the plot of the movie is \'Avengers\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 12
- testRunner.And("the movie actor is \'Iron Man\' \'1980 2 2\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the movie actor are \"<Actor>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 13
- testRunner.And("the movie producer is \'Shield\' \'1980 3 3\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the movie producer is \'Shield\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 14
  testRunner.When("I add the movie to the movie list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
@@ -138,22 +138,13 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Then("the movie will appear as", ((string)(null)), table1, "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                            "PersonName",
-                            "PersonDob"});
+                            "Actor"});
                 table2.AddRow(new string[] {
-                            "IronMan",
-                            "2/2/1980 12:00:00 AM"});
+                            "IronMan"});
+                table2.AddRow(new string[] {
+                            "CaptainAmeica"});
 #line 18
  testRunner.And("actor for the movie should be like", ((string)(null)), table2, "And ");
-#line hidden
-                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                            "PersonName",
-                            "PersonDob"});
-                table3.AddRow(new string[] {
-                            "Shield",
-                            "3/3/1980"});
-#line 21
- testRunner.And("producer for the movie should be like", ((string)(null)), table3, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

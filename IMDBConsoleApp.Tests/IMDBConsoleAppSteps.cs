@@ -1,5 +1,4 @@
 ﻿using IMDBConsoleApp.Domain;
-using IMDBConsoleApp.Repository;
 using System;
 using System.Collections.Generic;
 using TechTalk.SpecFlow;
@@ -11,11 +10,11 @@ namespace IMDBConsoleApp.Tests
     public class IMDBConsoleAppSteps
     {
         private string _name, _plot;
-        private DateTime _yearOfRelease;
-        private List<Person> _actors;
-        private List<Person> _producer;
-        private MovieRepository _movieRepository = new MovieRepository();
-        private IList<Movie> _movies;
+        private int _yearOfRelease;
+        private List<string> _actors;
+        private string _producer;
+        private MovieHelper _movieHelper = new MovieHelper();
+        //private IList<Movie> _movies;
 
         [Given(@"I have a movie with name '(.*)'")]
         public void GivenIHaveAMovieWithName(string name)
@@ -24,7 +23,7 @@ namespace IMDBConsoleApp.Tests
         }
 
         [Given(@"the release date of movie is '(.*)'")]
-        public void GivenTheReleaseDateOfMovieIs(DateTime yearOfRelease)
+        public void GivenTheReleaseDateOfMovieIs(int yearOfRelease)
         {
             _yearOfRelease = yearOfRelease;
         }
@@ -35,37 +34,31 @@ namespace IMDBConsoleApp.Tests
             _plot = plot;
         }
 
-        [Given(@"the movie actor is '(.*)' '(.*)'")]
-        public void GivenTheMovieActorIs(string actorName, DateTime actorDob)
+        [Given(@"the movie actor are ""(.*)""")]
+        public void GivenTheMovieActorAre(List<string> actors)
         {
-            _actors = new List<Person> { new Person() { PersonName = actorName, PersonDob = actorDob } };
+            _actors = actors;
         }
 
-        [Given(@"the movie producer is '(.*)' '(.*)'")]
-        public void GivenTheMovieProducerIs(string producerName, DateTime producerDob)
+        [Given(@"the movie producer is '(.*)'")]
+        public void GivenTheMovieProducerIs(string producer)
         {
-            _producer = new List<Person> { new Person() { PersonName = producerName, PersonDob = producerDob } };
+            _producer = producer;
         }
+
+
 
         [When(@"I add the movie to the movie list")]
         public void WhenIAddTheMovieToTheMovieList()
         {
-            var movie = new Movie()
-            {
-                Name = _name,
-                YearOfRelease = _yearOfRelease,
-                Plot = _plot,
-                Actor = _actors,
-                Producer = _producer
-            };
-            _movieRepository.Add(movie);
+            _movieHelper.AddMovie(_name,_plot,_yearOfRelease,_actors,_producer);
         }
 
         [Then(@"the movie will appear as")]
         public void ThenTheMovieWillAppearAs(Table table)
         {
-            var movies = _movieRepository.GetAll();
-            table.CompareToSet(movies);
+            var movie = _movieHelper.GetMovie(_name);
+            table.CompareToInstance(movie);
         }
 
         [Then(@"actor for the movie should be like")]

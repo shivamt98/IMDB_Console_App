@@ -20,11 +20,11 @@ namespace IMDBConsoleApp.Repository
             _movies.Add(movie);
         }
 
-        //public Movie Get()
-        //{
-        //    var movies = _movies;
-        //    return (Movie)movies;
-        //}
+        public Movie Get(string name)
+        {
+            var movies = _movies.FirstOrDefault(m => m.Name == name);
+            return movies;            
+        }
         public IList<Movie> GetAll()
         {
             return _movies.ToList();

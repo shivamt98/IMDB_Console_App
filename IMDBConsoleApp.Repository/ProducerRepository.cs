@@ -8,26 +8,26 @@ namespace IMDBConsoleApp.Repository
 {
     public class ProducerRepository
     {
-        private IList<Person> _producer;
+        private IList<Person> _producers;
         public ProducerRepository()
         {
-            _producer = new List<Person>();
+            _producers = new List<Person>();
         }
 
         public void AddProducer(Person producer)
         {
-            _producer.Add(producer);
+            _producers.Add(producer);
         }
 
-        public Person GetProducer()
+        public Person GetProducer(string name)
         {
-            var producers = _producer;
-            return (Person)producers;
+            var producer = _producers.FirstOrDefault(p => p.Name == name);
+            return producer;
         }
         
         public IList<Person> GetAllProducers()
         {
-            return _producer.ToList();
+            return _producers.ToList();
         }
     }
 }

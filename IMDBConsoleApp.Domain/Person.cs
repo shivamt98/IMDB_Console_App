@@ -5,8 +5,7 @@ namespace IMDBConsoleApp.Domain
 {
     public class Person
     {
-        public string PersonName { get; set; }
-        public DateTime PersonDob { get; set; }
-
+        public string Name { get; set; }
+        public DateTime Dob { get; set; }
     }
 }

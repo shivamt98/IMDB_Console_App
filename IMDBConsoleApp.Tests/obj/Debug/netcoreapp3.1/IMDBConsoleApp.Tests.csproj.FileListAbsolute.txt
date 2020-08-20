@@ -108,3 +108,6 @@ C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Tests\obj\Debug\n
 C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Tests\obj\Debug\netcoreapp3.1\IMDBConsoleApp.Tests.dll
 C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Tests\obj\Debug\netcoreapp3.1\IMDBConsoleApp.Tests.pdb
 C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Tests\obj\Debug\netcoreapp3.1\IMDBConsoleApp.Tests.genruntimeconfig.cache
+C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Tests\bin\Debug\netcoreapp3.1\IMDBConsoleApp.exe
+C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Tests\bin\Debug\netcoreapp3.1\IMDBConsoleApp.dll
+C:\Users\HP\Desktop\Company_Work\IMDBConsoleApp\IMDBConsoleApp.Tests\bin\Debug\netcoreapp3.1\IMDBConsoleApp.pdb

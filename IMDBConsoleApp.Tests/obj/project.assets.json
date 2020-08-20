@@ -2291,6 +2291,19 @@
           "lib/netstandard1.1/Xunit.SkippableFact.dll": {}
         }
       },
+      "IMDBConsoleApp/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "IMDBConsoleApp.Repository": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/IMDBConsoleApp.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/IMDBConsoleApp.dll": {}
+        }
+      },
       "IMDBConsoleApp.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -7419,6 +7432,11 @@
         "xunit.skippablefact.nuspec"
       ]
     },
+    "IMDBConsoleApp/1.0.0": {
+      "type": "project",
+      "path": "../IMDBConsoleApp/IMDBConsoleApp.csproj",
+      "msbuildProject": "../IMDBConsoleApp/IMDBConsoleApp.csproj"
+    },
     "IMDBConsoleApp.Domain/1.0.0": {
       "type": "project",
       "path": "../IMDBConsoleApp.Domain/IMDBConsoleApp.Domain.csproj",
@@ -7432,6 +7450,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "IMDBConsoleApp >= 1.0.0",
       "IMDBConsoleApp.Domain >= 1.0.0",
       "IMDBConsoleApp.Repository >= 1.0.0",
       "SpecFlow >= 3.1.82",
@@ -7472,6 +7491,9 @@
             },
             "C:\\Users\\HP\\Desktop\\Company_Work\\IMDBConsoleApp\\IMDBConsoleApp.Repository\\IMDBConsoleApp.Repository.csproj": {
               "projectPath": "C:\\Users\\HP\\Desktop\\Company_Work\\IMDBConsoleApp\\IMDBConsoleApp.Repository\\IMDBConsoleApp.Repository.csproj"
+            },
+            "C:\\Users\\HP\\Desktop\\Company_Work\\IMDBConsoleApp\\IMDBConsoleApp\\IMDBConsoleApp.csproj": {
+              "projectPath": "C:\\Users\\HP\\Desktop\\Company_Work\\IMDBConsoleApp\\IMDBConsoleApp\\IMDBConsoleApp.csproj"
             }
           }
         }

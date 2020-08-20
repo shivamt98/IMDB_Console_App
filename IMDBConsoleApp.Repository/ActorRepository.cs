@@ -8,27 +8,27 @@ namespace IMDBConsoleApp.Repository
 {
     public class ActorRepository
     {
-        private IList<Person> _actor;
+        private IList<Person> _actors;
 
         public ActorRepository()
         {
-            _actor = new List<Person>();
+            _actors = new List<Person>();
         }
 
         public void AddActor(Person actor)
         {
-            _actor.Add(actor);
+            _actors.Add(actor);
         }
 
-        public Person GetActor()
+        public Person GetActor(string name)
         {
-            var actors = _actor;
-            return (Person)actors;            
+            var actor = _actors.FirstOrDefault(a => a.Name == name);
+            return actor;                      
         }
 
         public IList<Person> GetAllActors()
         {
-            return _actor.ToList();
+            return _actors.ToList();
         }
     }
 }

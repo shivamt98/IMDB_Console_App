@@ -15,6 +15,7 @@
 	<ItemGroup>
 	  <ProjectReference Include="..\IMDBConsoleApp.Domain\IMDBConsoleApp.Domain.csproj" />
 	  <ProjectReference Include="..\IMDBConsoleApp.Repository\IMDBConsoleApp.Repository.csproj" />
+	  <ProjectReference Include="..\IMDBConsoleApp\IMDBConsoleApp.csproj" />
 	</ItemGroup>
 
 </Project>
