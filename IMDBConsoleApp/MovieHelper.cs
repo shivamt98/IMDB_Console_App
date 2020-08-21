@@ -14,17 +14,20 @@ namespace IMDBConsoleApp
         private ProducerRepository _producerRepository;
         public void AddMovie(string name, string plot, int yearOfRelease, List<string> actorList, string producer)
         {
-            string actors = string.Join(",", actorList);
-            var actor = new List<Person>() { _actorRepository.GetActor(actors) };
-            var prodcuer =new List<Person>() { _producerRepository.GetProducer(producer) };
+            var actors = new List<Person>();
+            foreach (var actor in actorList)
+            {
+                var actorObj = _actorRepository.GetActor(actor);
+                actors.Add(actorObj);
+            }
 
             var movie = new Movie()
             {
                 Name = name,
                 Plot = plot,
                 YearOfRelease = Convert.ToDateTime(yearOfRelease),
-                Actor = actor,
-                Producer = prodcuer
+                Actor = actors,
+                Producer = _producerRepository.GetProducer(producer)
             };
             _movieRepository.Add(movie);
         }
@@ -36,6 +39,16 @@ namespace IMDBConsoleApp
         public Movie GetMovie (string name)
         {
             return _movieRepository.Get(name);
+        }
+
+        public void AddActor(Person actor)
+        {
+            _actorRepository.AddActor(actor);
+        }
+
+        public void AddProducer(Person producer)
+        {
+            _producerRepository.AddProducer(producer);
         }
     }
 }

@@ -118,7 +118,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And("the plot of the movie is \'Avengers\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 12
- testRunner.And("the movie actor are \"<Actor>\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("the movie actor are \'IronMan, CaptainAmeica\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 13
  testRunner.And("the movie producer is \'Shield\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
@@ -145,6 +145,68 @@ this.ScenarioInitialize(scenarioInfo);
                             "CaptainAmeica"});
 #line 18
  testRunner.And("actor for the movie should be like", ((string)(null)), table2, "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Producer"});
+                table3.AddRow(new string[] {
+                            "Shield"});
+#line 22
+ testRunner.And("producer for the movie should be like", ((string)(null)), table3, "And ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Show list of all the movies on console")]
+        [Xunit.TraitAttribute("FeatureTitle", "IMDB Console App")]
+        [Xunit.TraitAttribute("Description", "Show list of all the movies on console")]
+        [Xunit.TraitAttribute("Category", "list")]
+        public virtual void ShowListOfAllTheMoviesOnConsole()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "list"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Show list of all the movies on console", null, new string[] {
+                        "list"});
+#line 29
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 30
+ testRunner.Given("I have list of movies", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 31
+ testRunner.When("I will fetch the movies", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+                TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name",
+                            "Year of release",
+                            "Plot",
+                            "Actors",
+                            "Producer"});
+                table4.AddRow(new string[] {
+                            "Avenger",
+                            "2020 1 1",
+                            "Avengers",
+                            "Iron Man, Captain America",
+                            "Shield"});
+#line 32
+ testRunner.Then("Movies will appear as", ((string)(null)), table4, "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

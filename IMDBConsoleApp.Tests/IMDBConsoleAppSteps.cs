@@ -1,6 +1,7 @@
 ﻿using IMDBConsoleApp.Domain;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
 
@@ -14,7 +15,7 @@ namespace IMDBConsoleApp.Tests
         private List<string> _actors;
         private string _producer;
         private MovieHelper _movieHelper = new MovieHelper();
-        //private IList<Movie> _movies;
+        private IList<Movie> _movies;
 
         [Given(@"I have a movie with name '(.*)'")]
         public void GivenIHaveAMovieWithName(string name)
@@ -34,11 +35,13 @@ namespace IMDBConsoleApp.Tests
             _plot = plot;
         }
 
-        [Given(@"the movie actor are ""(.*)""")]
-        public void GivenTheMovieActorAre(List<string> actors)
+        [Given(@"the movie actor are '(.*)'")]
+        public void GivenTheMovieActorAre(string actors)
         {
-            _actors = actors;
+            var actorsList = actors.Split(",").ToList();
+            _actors = actorsList;
         }
+
 
         [Given(@"the movie producer is '(.*)'")]
         public void GivenTheMovieProducerIs(string producer)
@@ -71,6 +74,41 @@ namespace IMDBConsoleApp.Tests
         public void ThenProducerForTheMovieShouldBeLike(Table table)
         {
             table.CompareToSet(_producer);
+        }
+
+        [Given(@"I have list of movies")]
+        public void GivenIHaveListOfMovies()
+        {
+        }
+
+        [When(@"I will fetch the movies")]
+        public void WhenIWillFetchTheMovies()
+        {
+             _movieHelper.GetMovies();
+        }
+
+        [Then(@"Movies will appear as")]
+        public void ThenMoviesWillAppearAs(Table table)
+        {
+            table.CompareToSet(_movies);
+        }
+
+        [BeforeScenario("list")]
+        public void AddSampleMovie()
+        {
+            //List<string> actor = new List<string> { "IronMan", "CaptainAmerica" };
+            //_movieHelper.AddMovie("Avenger", "Avengers", 2020, actor, "Shield");
+            
+            var actor = new List<Person>() { new Person { Name = "IronMan", Dob = new DateTime(1970,1,1)},  new Person { Name = "CaptainAmerica", Dob = new DateTime (1980,1,1)} };
+            var producer = new Person() { Name = "Shield", Dob = new DateTime(1960, 1, 1) };
+            var movie1 = new Movie()
+            {
+                Name = "Avenger",
+                Plot = "Avengers",
+                YearOfRelease = new DateTime(2020/1/1),
+                Actor = actor,
+                Producer = producer
+            };
         }
     }
 }
