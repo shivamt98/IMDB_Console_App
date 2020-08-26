@@ -20,10 +20,15 @@ namespace IMDBConsoleApp.Repository
             _actors.Add(actor);
         }
 
-        public Person GetActor(string name)
+        public List<Person> GetActor(List<string> name)
         {
-            var actor = _actors.FirstOrDefault(a => a.Name == name);
-            return actor;                      
+            List<Person> _actorList = new List<Person>();
+            foreach(var actorName in name)
+            {
+                var actor = _actors.FirstOrDefault(a => a.Name == actorName);                
+                _actorList.Add(actor);
+            }           
+            return _actorList;                      
         }
 
         public IList<Person> GetAllActors()

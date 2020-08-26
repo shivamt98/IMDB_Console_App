@@ -11,7 +11,7 @@ namespace IMDBConsoleApp.Tests
     public class IMDBConsoleAppSteps
     {
         private string _name, _plot;
-        private int _yearOfRelease;
+        private DateTime _yearOfRelease;
         private List<string> _actors;
         private string _producer;
         private MovieHelper _movieHelper = new MovieHelper();
@@ -24,7 +24,7 @@ namespace IMDBConsoleApp.Tests
         }
 
         [Given(@"the release date of movie is '(.*)'")]
-        public void GivenTheReleaseDateOfMovieIs(int yearOfRelease)
+        public void GivenTheReleaseDateOfMovieIs(DateTime yearOfRelease)
         {
             _yearOfRelease = yearOfRelease;
         }
@@ -61,20 +61,23 @@ namespace IMDBConsoleApp.Tests
         public void ThenTheMovieWillAppearAs(Table table)
         {
             var movie = _movieHelper.GetMovie(_name);
-            table.CompareToInstance(movie);
+            table.Equals(movie);
         }
 
         [Then(@"actor for the movie should be like")]
         public void ThenActorForTheMovieShouldBeLike(Table table)
         {
-            table.CompareToSet(_actors);
+            var movie = _movieHelper.GetMovie(_name);
+            table.CompareToSet(movie.Actor);
         }
 
         [Then(@"producer for the movie should be like")]
         public void ThenProducerForTheMovieShouldBeLike(Table table)
         {
-            table.CompareToSet(_producer);
+            var movie = _movieHelper.GetMovie(_name);
+            table.CompareToInstance(movie.Producer);
         }
+
 
         [Given(@"I have list of movies")]
         public void GivenIHaveListOfMovies()
@@ -84,7 +87,7 @@ namespace IMDBConsoleApp.Tests
         [When(@"I will fetch the movies")]
         public void WhenIWillFetchTheMovies()
         {
-             _movieHelper.GetMovies();
+            _movies = _movieHelper.GetMovies();
         }
 
         [Then(@"Movies will appear as")]
@@ -93,22 +96,44 @@ namespace IMDBConsoleApp.Tests
             table.CompareToSet(_movies);
         }
 
-        [BeforeScenario("list")]
-        public void AddSampleMovie()
+        [Then(@"Movie actor will appear as")]
+        public void ThenMovieActorWillAppearAs(Table table)
         {
-            //List<string> actor = new List<string> { "IronMan", "CaptainAmerica" };
-            //_movieHelper.AddMovie("Avenger", "Avengers", 2020, actor, "Shield");
-            
-            var actor = new List<Person>() { new Person { Name = "IronMan", Dob = new DateTime(1970,1,1)},  new Person { Name = "CaptainAmerica", Dob = new DateTime (1980,1,1)} };
-            var producer = new Person() { Name = "Shield", Dob = new DateTime(1960, 1, 1) };
-            var movie1 = new Movie()
+            foreach(var movies in _movies)
             {
-                Name = "Avenger",
-                Plot = "Avengers",
-                YearOfRelease = new DateTime(2020/1/1),
-                Actor = actor,
-                Producer = producer
-            };
+                var movie = _movieHelper.GetMovie(movies.Name);
+                table.CompareToSet(movie.Actor);
+            }            
+        }
+
+        [Then(@"Movies producer will appear as")]
+        public void ThenMoviesProducerWillAppearAs(Table table)
+        {
+            foreach(var movies in _movies)
+            {
+                var movie = _movieHelper.GetMovie(movies.Name);
+                table.CompareToInstance(movie.Producer);
+            }
+        }
+
+
+
+        [BeforeScenario("addingActorAndProducer")]
+
+        public void AddActorAndProducer()
+        {
+            _movieHelper.AddActor("IronMan", new DateTime(1970, 1, 1));
+            _movieHelper.AddActor("CaptainAmerica", new DateTime(1972, 8, 2));
+            _movieHelper.AddProducer("Shield", new DateTime(1960, 1, 1));
+        }
+
+
+        [BeforeScenario("list")]
+
+        public void AddMovie()
+        {
+            List<string> actorName = new List<string>() { "IronMan", "CaptainAmerica" };
+            _movieHelper.AddMovie("Avenger", "Avengers", new DateTime(2020, 1, 1), actorName, "Shield");
         }
     }
 }

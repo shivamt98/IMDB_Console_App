@@ -84,11 +84,14 @@ namespace IMDBConsoleApp.Tests
         [Xunit.SkippableFactAttribute(DisplayName="Add a new movie")]
         [Xunit.TraitAttribute("FeatureTitle", "IMDB Console App")]
         [Xunit.TraitAttribute("Description", "Add a new movie")]
+        [Xunit.TraitAttribute("Category", "addingActorAndProducer")]
         public virtual void AddANewMovie()
         {
-            string[] tagsOfScenario = ((string[])(null));
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add a new movie", null, ((string[])(null)));
-#line 8
+            string[] tagsOfScenario = new string[] {
+                    "addingActorAndProducer"};
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add a new movie", null, new string[] {
+                        "addingActorAndProducer"});
+#line 7
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -108,22 +111,22 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 9
+#line 8
  testRunner.Given("I have a movie with name \'Avenger\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 10
- testRunner.And("the release date of movie is \'2020 1 1\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 9
+ testRunner.And("the release date of movie is \'2020-8-10\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 11
+#line 10
  testRunner.And("the plot of the movie is \'Avengers\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 12
- testRunner.And("the movie actor are \'IronMan, CaptainAmeica\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
+ testRunner.And("the movie actor are \'IronMan,CaptainAmerica\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 13
+#line 12
  testRunner.And("the movie producer is \'Shield\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 14
+#line 13
  testRunner.When("I add the movie to the movie list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
@@ -132,25 +135,30 @@ this.ScenarioInitialize(scenarioInfo);
                             "Plot"});
                 table1.AddRow(new string[] {
                             "Avenger",
-                            "1/1/2020",
+                            "2020-8-10",
                             "Avengers"});
-#line 15
+#line 14
  testRunner.Then("the movie will appear as", ((string)(null)), table1, "Then ");
 #line hidden
                 TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Actor"});
+                            "Name",
+                            "Dob"});
                 table2.AddRow(new string[] {
-                            "IronMan"});
+                            "IronMan",
+                            "1970-1-1"});
                 table2.AddRow(new string[] {
-                            "CaptainAmeica"});
-#line 18
+                            "CaptainAmerica",
+                            "1972-8-2"});
+#line 17
  testRunner.And("actor for the movie should be like", ((string)(null)), table2, "And ");
 #line hidden
                 TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
-                            "Producer"});
+                            "Name",
+                            "Dob"});
                 table3.AddRow(new string[] {
-                            "Shield"});
-#line 22
+                            "Shield",
+                            "1960-1-1"});
+#line 21
  testRunner.And("producer for the movie should be like", ((string)(null)), table3, "And ");
 #line hidden
             }
@@ -160,14 +168,17 @@ this.ScenarioInitialize(scenarioInfo);
         [Xunit.SkippableFactAttribute(DisplayName="Show list of all the movies on console")]
         [Xunit.TraitAttribute("FeatureTitle", "IMDB Console App")]
         [Xunit.TraitAttribute("Description", "Show list of all the movies on console")]
+        [Xunit.TraitAttribute("Category", "addingActorAndProducer")]
         [Xunit.TraitAttribute("Category", "list")]
         public virtual void ShowListOfAllTheMoviesOnConsole()
         {
             string[] tagsOfScenario = new string[] {
+                    "addingActorAndProducer",
                     "list"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Show list of all the movies on console", null, new string[] {
+                        "addingActorAndProducer",
                         "list"});
-#line 29
+#line 26
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -187,26 +198,43 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 30
+#line 27
  testRunner.Given("I have list of movies", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 31
+#line 28
  testRunner.When("I will fetch the movies", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
                 TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
                             "Name",
                             "Year of release",
-                            "Plot",
-                            "Actors",
-                            "Producer"});
+                            "Plot"});
                 table4.AddRow(new string[] {
                             "Avenger",
-                            "2020 1 1",
-                            "Avengers",
-                            "Iron Man, Captain America",
-                            "Shield"});
-#line 32
+                            "2020-1-1",
+                            "Avengers"});
+#line 29
  testRunner.Then("Movies will appear as", ((string)(null)), table4, "Then ");
+#line hidden
+                TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name",
+                            "Dob"});
+                table5.AddRow(new string[] {
+                            "IronMan",
+                            "1970-1-1"});
+                table5.AddRow(new string[] {
+                            "CaptainAmerica",
+                            "1972-8-2"});
+#line 32
+ testRunner.And("Movie actor will appear as", ((string)(null)), table5, "And ");
+#line hidden
+                TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                            "Name",
+                            "Dob"});
+                table6.AddRow(new string[] {
+                            "Shield",
+                            "1960-1-1"});
+#line 36
+ testRunner.And("Movies producer will appear as", ((string)(null)), table6, "And ");
 #line hidden
             }
             this.ScenarioCleanup();

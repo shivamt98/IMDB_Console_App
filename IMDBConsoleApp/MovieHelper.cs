@@ -9,23 +9,18 @@ namespace IMDBConsoleApp
 {
     public class MovieHelper
     {
-        private MovieRepository _movieRepository;
-        private ActorRepository _actorRepository;
-        private ProducerRepository _producerRepository;
-        public void AddMovie(string name, string plot, int yearOfRelease, List<string> actorList, string producer)
+        private MovieRepository _movieRepository = new MovieRepository();
+        private ActorRepository _actorRepository = new ActorRepository();
+        private ProducerRepository _producerRepository  = new ProducerRepository();
+        public void AddMovie(string name, string plot, DateTime yearOfRelease, List<string> actorList, string producer)
         {
-            var actors = new List<Person>();
-            foreach (var actor in actorList)
-            {
-                var actorObj = _actorRepository.GetActor(actor);
-                actors.Add(actorObj);
-            }
+            var actors = _actorRepository.GetActor(actorList);
 
             var movie = new Movie()
             {
                 Name = name,
                 Plot = plot,
-                YearOfRelease = Convert.ToDateTime(yearOfRelease),
+                YearOfRelease = yearOfRelease,
                 Actor = actors,
                 Producer = _producerRepository.GetProducer(producer)
             };
@@ -36,18 +31,25 @@ namespace IMDBConsoleApp
             return _movieRepository.GetAll().ToList();
         }
 
-        public Movie GetMovie (string name)
+        public Movie GetMovie(string name)
         {
             return _movieRepository.Get(name);
         }
 
-        public void AddActor(Person actor)
+        public void AddActor(string name, DateTime dob)
         {
+            var actor = new Person() { Name = name, Dob = dob };
             _actorRepository.AddActor(actor);
         }
 
-        public void AddProducer(Person producer)
+        public List<Person> GetActor(List<string> name)
         {
+            return _actorRepository.GetActor(name);
+        }
+
+        public void AddProducer(string name, DateTime dob)
+        {
+            var producer = new Person() { Name = name, Dob = dob };
             _producerRepository.AddProducer(producer);
         }
     }
